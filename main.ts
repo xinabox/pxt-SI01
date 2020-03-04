@@ -409,6 +409,8 @@ namespace SI01 {
     //% block="SI01 get gyro %u"
     export function getGyro(dim: GYRO): number {
 
+        readGyro()
+
         if (dim == GYRO.GX)
             return gX
         else if (dim == GYRO.GY)
