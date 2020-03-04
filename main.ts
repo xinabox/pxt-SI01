@@ -453,11 +453,12 @@ namespace SI01 {
     //% block="SI01 poll sensor"
     export function poll() {
         basic.pause(10)
-        if(SI01_ACK)
-        {
-        readAccel()
-        //readGyro()
-        readMag()
+        if (SI01_ACK) {
+            readAccel()
+            basic.pause(10)
+            readGyro()
+            basic.pause(10)
+            readMag()
         }
     }
 } 
