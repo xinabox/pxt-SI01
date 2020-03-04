@@ -455,8 +455,8 @@ namespace SI01 {
         basic.pause(10)
         if(SI01_ACK)
         {
-        /*readAccel()
-        readGyro()
+        readAccel()
+        /*readGyro()
         readMag()*/
         }
     }
