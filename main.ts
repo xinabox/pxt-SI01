@@ -456,8 +456,8 @@ namespace SI01 {
         if(SI01_ACK)
         {
         readAccel()
-        /*readGyro()
-        readMag()*/
+        readGyro()
+        /*readMag()*/
         }
     }
 } 
