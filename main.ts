@@ -457,7 +457,7 @@ namespace SI01 {
         {
         readAccel()
         readGyro()
-        /*readMag()*/
+        readMag()
         }
     }
 } 
