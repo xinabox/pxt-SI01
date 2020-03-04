@@ -423,6 +423,8 @@ namespace SI01 {
     //% block="SI01 get acceleration %u"
     export function getAccel(dim: ACCEL): NumberFormat.Int16LE {
 
+        readAccel()
+
         if (dim == ACCEL.AX) {
             return aX
         }
@@ -449,87 +451,13 @@ namespace SI01 {
         return 0
     }
 
-    function poll_sensor() {
-        let data: NumberFormat.Int16LE = 0;
-
-        let newData: NumberFormat.UInt8LE = 0;
-
-        newData = getreg(LSM9DS1_AG_I2C_ADDRESS, STATUS_REG_G);
-        if (newData & GYRO_READY) {
-            data = getInt8LE(LSM9DS1_AG_I2C_ADDRESS, OUT_X_H_G);
-            data <<= 8;
-            data |= getreg(LSM9DS1_AG_I2C_ADDRESS, OUT_X_L_G);
-            gX = data * sensitivity.gyro;
-            data = 0;
-
-            data = getInt8LE(LSM9DS1_AG_I2C_ADDRESS, OUT_Y_H_G);
-            data <<= 8;
-            data |= getreg(LSM9DS1_AG_I2C_ADDRESS, OUT_Y_L_G);
-            gY = data * sensitivity.gyro;
-            data = 0;
-
-            data = getInt8LE(LSM9DS1_AG_I2C_ADDRESS, OUT_Z_H_G);
-            data <<= 8;
-            data |= getreg(LSM9DS1_AG_I2C_ADDRESS, OUT_Z_L_G);
-            gZ = data * sensitivity.gyro;
-            data = 0
-        }
-
-        newData = getreg(LSM9DS1_AG_I2C_ADDRESS, STATUS_REG_A);
-
-        if (newData & ACC_READY) {
-            // Get X data
-            data = getInt8LE(LSM9DS1_AG_I2C_ADDRESS, OUT_X_H_XL);
-            data <<= 8;
-            data |= getreg(LSM9DS1_AG_I2C_ADDRESS, OUT_X_L_XL);
-            aX = data * sensitivity.accel;
-            data = 0;
-
-            // get Y data
-            data = getInt8LE(LSM9DS1_AG_I2C_ADDRESS, OUT_Y_H_XL);
-            data <<= 8;
-            data |= getreg(LSM9DS1_AG_I2C_ADDRESS, OUT_Y_L_XL);
-            aY = data * sensitivity.accel;
-            data = 0;
-
-            // get Z data
-            data = getInt8LE(LSM9DS1_AG_I2C_ADDRESS, OUT_Z_H_XL);
-            data <<= 8;
-            data |= getreg(LSM9DS1_AG_I2C_ADDRESS, OUT_Z_L_XL);
-            aZ = data * sensitivity.accel;
-            data = 0
-        }
-
-        newData = getreg(LSM9DS1_M_I2C_ADDRESS, STATUS_REG_M);
-
-        if (newData & MAG_READY) {
-            data = getInt8LE(LSM9DS1_M_I2C_ADDRESS, OUT_X_H_M);
-            data <<= 8;
-            data |= getreg(LSM9DS1_M_I2C_ADDRESS, OUT_X_L_M);
-            mX = data * sensitivity.mag;
-            data = 0;
-
-            data = getInt8LE(LSM9DS1_M_I2C_ADDRESS, OUT_Y_H_M);
-            data <<= 8;
-            data |= getreg(LSM9DS1_M_I2C_ADDRESS, OUT_Y_L_M);
-            mY = data * sensitivity.mag;
-            data = 0;
-
-            data = getInt8LE(LSM9DS1_M_I2C_ADDRESS, OUT_Z_H_M);
-            data <<= 8;
-            data |= getreg(LSM9DS1_M_I2C_ADDRESS, OUT_Z_L_M);
-            mZ = data * sensitivity.mag;
-            data = 0
-        }
-
-    }
 
     //% blockId="poll"
     //% block="SI01 poll sensor"
     export function poll() {
         basic.pause(10)
         if (SI01_ACK) {
-            poll_sensor()
+
         }
     }
 } 
