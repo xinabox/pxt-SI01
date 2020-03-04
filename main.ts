@@ -455,13 +455,4 @@ namespace SI01 {
         return 0
     }
 
-
-    //% blockId="poll"
-    //% block="SI01 poll sensor"
-    export function poll() {
-        basic.pause(10)
-        if (SI01_ACK) {
-
-        }
-    }
 } 
