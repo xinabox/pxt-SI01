@@ -4,3 +4,6 @@
 
 * for PXT/maker
 * for PXT/codal
+
+## Sample usage
+
