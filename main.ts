@@ -443,6 +443,8 @@ namespace SI01 {
     //% blockId="getMag"
     //% block="SI01 get magnetic field %u"
     export function getMag(dim: MAG): number {
+        readMag()
+
         if (dim == MAG.MX)
             return mX
         else if (dim == MAG.MY)
