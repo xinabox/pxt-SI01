@@ -3,7 +3,8 @@
 ![Maintained](https://img.shields.io/maintenance/yes/2020) 
 ![Build status badge](https://github.com/xinabox/pxt-SI01/workflows/maker/badge.svg)
 ![Build status badge](https://github.com/xinabox/pxt-SI01/workflows/microbit/badge.svg)
-![Developer](https://img.shields.io/badge/Developer-bb-blue)
+![Developer](https://img.shields.io/badge/Developer-kj-blue)
+
 
 # pxt-SI01
 
