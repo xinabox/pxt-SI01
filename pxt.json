@@ -1,7 +1,7 @@
 {
   "name": "SI01",
   "version": "0.0.51",
-  "description": "",
+  "description": "XinaBox SI01 IMU: Accelerometer, Gyroscope and Magnetometer",
   "dependencies": {
     "core": "*"
   },
