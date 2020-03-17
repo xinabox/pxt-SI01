@@ -1,17 +1,23 @@
 {
-    "name": "pxt-si01",
-    "version": "0.0.51",
-    "description": "",
-    "dependencies": {
-        "core": "*"
-    },
-    "files": [
-        "README.md",
-        "main.ts"
-    ],
-    "testFiles": [
-        "test.ts"
-    ],
-    "public": true,
-    "preferredEditor": "tsprj"
+  "name": "$1",
+  "version": "0.0.51",
+  "description": "",
+  "dependencies": {
+    "core": "*"
+  },
+  "files": [
+    "README.md",
+    "main.ts"
+  ],
+  "testFiles": [
+    "test.ts"
+  ],
+  "public": "true",
+  "preferredEditor": "blocksprj",
+  "author": "$DEVELOPER",
+  "license": "MIT",
+  "authors": [
+    "$DEVNAME",
+    "Bjarke Gotfredsen"
+  ]
 }
