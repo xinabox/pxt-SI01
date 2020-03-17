@@ -1,5 +1,5 @@
 {
-  "name": "$1",
+  "name": "$P",
   "version": "0.0.51",
   "description": "",
   "dependencies": {
